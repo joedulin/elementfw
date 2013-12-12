@@ -1,0 +1,31 @@
+{
+  "name": "elementfw",
+  "description": "Templates based on element.js",
+  "version": "0.0.1",
+  "author": "Joe Dulin <joe+github@dulinbanjos.com>",
+  "contributors": [
+    {
+      "name": "Joe Dulin",
+      "email": "joe+github@dulinbanjos.com"
+    }
+  ],
+  "dependencies": {
+    "element.js": "git://github.com/joedulin/element.js"
+  },
+  "keywords": [
+    "framework",
+    "template",
+    "web",
+    "dom",
+    "element"
+  ],
+  "repository": "git://github.com/joedulin/elementfw",
+  "main": "index",
+  "scripts": {
+    "prepublish": "npm prune",
+    "test": "make test"
+  },
+  "engines": {
+    "node": ">= 0.8.0"
+  }
+}
