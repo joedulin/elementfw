@@ -7,7 +7,7 @@ function Template () {
 		var body = this.body.render();
 		for (var key in this.vars) {
 			var regex = new RegExp('%'+key+'%', 'g');
-			body.replace(regex, value);
+			body = body.replace(regex, this.vars[key]);
 		}
 		return body;
 	};
@@ -16,8 +16,8 @@ function Template () {
 	};
 }
 
-function getTemplate (filepath) {
-	return require(filepath);
+function getTemplate (fullpath) {
+	return require(fullpath).Template;
 }
 
 exports.Template = Template;

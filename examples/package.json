@@ -1,0 +1,5 @@
+{
+	"dependencies": {
+		"element.js": "git://github.com/joedulin/element.js" 
+	}
+}
