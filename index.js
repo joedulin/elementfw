@@ -1,3 +1,5 @@
+var clone = require('clone');
+
 function Template () {
 	this.body = {};
 	this.vars = {};
@@ -16,8 +18,13 @@ function Template () {
 	};
 }
 
+templates = {};
+
 function getTemplate (fullpath) {
-	return require(fullpath).Template;
+	if (typeof templates[fullpath] === 'undefined') {
+		templates[fullpath] = require(fullpath).Template;
+	}
+	return clone(templates[fullpath]);
 }
 
 exports.Template = Template;
