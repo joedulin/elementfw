@@ -23,8 +23,20 @@ templates = {};
 function getTemplate (fullpath) {
 	if (typeof templates[fullpath] === 'undefined') {
 		templates[fullpath] = require(fullpath).Template;
+		templates[fullpath].body = (typeof templates[fullpath].body === 'undefined') ? 
+			{} : templates[fullpath].body;
+		templates[fullpath].vars = (typeof templates[fullpath].vars === 'undefined') ? 
+			{} : templates[fullpath].vars;
+		templates[fullpath].e = (typeof templates[fullpath].e === 'undefined') ? 
+			{} : templates[fullpath].e;
 	}
-	return clone(templates[fullpath]);
+	var tData = clone(templates[fullpath]);
+	var template = new Template();
+	template.body = tData.body;
+	template.vars = tData.vars;
+	template.e = tData.e;
+	return template;
+	
 }
 
 exports.Template = Template;
