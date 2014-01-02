@@ -10,7 +10,7 @@
     }
   ],
   "dependencies": {
-    "element.js": "git://github.com/joedulin/element.js",
+    "element.js": "git://github.com/joedulin/element.js.git",
 	"clone": "*"
   },
   "keywords": [
